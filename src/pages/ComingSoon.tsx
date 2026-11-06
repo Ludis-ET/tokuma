@@ -1,32 +1,34 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ShieldCheck, Sparkles } from 'lucide-react';
+import { Sparkles, ShieldCheck } from 'lucide-react';
 
 export const ComingSoon: React.FC = () => {
   return (
-    <div className="relative min-h-[calc(100vh-160px)] flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 text-center overflow-hidden py-12">
+    <div className="relative min-h-screen flex flex-col items-center justify-between px-4 sm:px-6 lg:px-8 text-center overflow-hidden py-10 sm:py-14">
       {/* Ambient background glows */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] sm:w-[700px] sm:h-[700px] bg-brand-500/15 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute top-1/3 left-1/4 w-72 h-72 bg-cyan-600/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-72 h-72 bg-brand-400/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] sm:w-[800px] sm:h-[800px] bg-brand-500/15 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/4 left-1/4 w-80 h-80 bg-cyan-600/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-brand-400/10 rounded-full blur-3xl pointer-events-none" />
 
-      {/* Main Content Container */}
-      <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center">
-        {/* Status Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-card border-brand-500/30 text-brand-300 text-xs sm:text-sm font-semibold mb-8 animate-float">
+      {/* Top pill spacer */}
+      <div className="relative z-10 pt-2">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-card border-brand-500/30 text-brand-300 text-xs sm:text-sm font-semibold animate-float">
           <span className="flex h-2 w-2 rounded-full bg-brand-400 animate-ping" />
           <Sparkles className="w-4 h-4 text-brand-400" />
           <span className="tracking-wide">Something Big is Coming to Ethiopia</span>
         </div>
+      </div>
 
+      {/* Center Main Stage */}
+      <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center my-auto py-8">
         {/* Big Beautiful Brand Logo */}
         <div className="relative mb-8 group">
-          <div className="absolute -inset-4 bg-gradient-to-r from-brand-500/30 to-cyan-400/30 rounded-3xl blur-2xl opacity-75 group-hover:opacity-100 transition-opacity duration-500" />
-          <div className="relative p-4 sm:p-5 rounded-3xl bg-dark-900/90 border border-brand-500/40 shadow-[0_0_60px_rgba(0,212,219,0.35)] backdrop-blur-xl">
+          <div className="absolute -inset-6 bg-gradient-to-r from-brand-500/35 to-cyan-400/35 rounded-3xl blur-2xl opacity-75 group-hover:opacity-100 transition-opacity duration-500" />
+          <div className="relative p-5 sm:p-7 rounded-3xl bg-dark-900/90 border border-brand-500/40 shadow-[0_0_70px_rgba(0,212,219,0.4)] backdrop-blur-xl">
             <img
               src="/logo.png"
               alt="TOKUMA Logo"
-              className="w-36 h-36 sm:w-48 sm:h-48 md:w-56 md:h-56 object-contain transition-transform duration-500 group-hover:scale-105"
+              className="w-40 h-40 sm:w-52 sm:h-52 md:w-64 md:h-64 object-contain transition-transform duration-500 group-hover:scale-105"
             />
           </div>
         </div>
@@ -54,8 +56,8 @@ export const ComingSoon: React.FC = () => {
           Stay tuned as we prepare for launch.
         </p>
 
-        {/* App Store / Google Play subtle indicators */}
-        <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-10 text-xs text-slate-400">
+        {/* Store indicators */}
+        <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xs text-slate-400">
           <div className="flex items-center gap-2 px-4 py-2 rounded-xl glass-card border-white/10">
             <svg className="w-4 h-4 fill-current text-brand-400" viewBox="0 0 24 24">
               <path d="M3.609 1.814L13.792 12 3.61 22.186a2.41 2.41 0 0 1-.61-.715 2.37 2.37 0 0 1-.225-1.03V3.56a2.37 2.37 0 0 1 .225-1.03 2.41 2.41 0 0 1 .61-.716zM15.207 13.415l2.671 2.672-13.447 7.76 10.776-10.432zm0-2.83L4.431.153l13.447 7.76-2.671 2.672zm1.415 1.415l3.208 1.853c1.077.622 1.077 1.637 0 2.259l-3.208 1.853-2.122-2.122 2.122-1.99.001.147z" />
@@ -69,17 +71,19 @@ export const ComingSoon: React.FC = () => {
             <span className="text-slate-300 font-medium">Apple App Store</span>
           </div>
         </div>
+      </div>
 
-        {/* Privacy Policy Link Button (Essential for Play Store Review) */}
-        <div>
-          <Link
-            to="/privacy"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl glass-card border-brand-500/30 text-brand-300 hover:text-white hover:border-brand-400 hover:bg-brand-500/10 text-sm font-semibold transition-all shadow-[0_0_20px_rgba(0,212,219,0.15)]"
-          >
-            <ShieldCheck className="w-4 h-4 text-brand-400" />
-            <span>Read Privacy Policy & Legal Disclosures</span>
-          </Link>
-        </div>
+      {/* Bottom subtle privacy link & copyright */}
+      <div className="relative z-10 flex flex-col sm:flex-row items-center gap-3 text-xs text-slate-400">
+        <span>© {new Date().getFullYear()} TOKUMA Technologies. All rights reserved.</span>
+        <span className="hidden sm:inline text-slate-600">•</span>
+        <Link
+          to="/privacy"
+          className="inline-flex items-center gap-1.5 text-brand-400 hover:text-brand-300 underline font-medium transition-colors"
+        >
+          <ShieldCheck className="w-3.5 h-3.5" />
+          <span>Privacy Policy</span>
+        </Link>
       </div>
     </div>
   );

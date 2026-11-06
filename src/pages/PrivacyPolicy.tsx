@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   ShieldCheck,
   MapPin,
@@ -13,6 +14,7 @@ import {
   Clock,
   Car,
   CheckCircle2,
+  ArrowLeft,
 } from 'lucide-react';
 
 export const PrivacyPolicy: React.FC = () => {
@@ -33,7 +35,28 @@ export const PrivacyPolicy: React.FC = () => {
   ];
 
   return (
-    <div className="relative min-h-screen py-12 md:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="relative min-h-screen py-8 md:py-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Top Bar for Privacy Page */}
+      <div className="flex items-center justify-between pb-8 mb-8 border-b border-white/10">
+        <Link to="/" className="flex items-center gap-3 group">
+          <img
+            src="/logo.png"
+            alt="TOKUMA"
+            className="h-10 w-10 object-contain rounded-xl p-1 bg-dark-900 border border-brand-500/30 shadow-[0_0_15px_rgba(0,212,219,0.25)]"
+          />
+          <span className="font-display text-xl font-extrabold tracking-wider text-white group-hover:text-brand-300 transition-colors">
+            TOKUMA
+          </span>
+        </Link>
+
+        <Link
+          to="/"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-xl glass-card border-brand-500/30 text-brand-300 hover:text-white hover:border-brand-400 text-xs sm:text-sm font-semibold transition-all shadow-[0_0_15px_rgba(0,212,219,0.15)]"
+        >
+          <ArrowLeft className="w-4 h-4" />
+          <span>Back to Home</span>
+        </Link>
+      </div>
       {/* Header Banner */}
       <div className="mb-12 text-center max-w-3xl mx-auto">
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-card border-brand-500/30 text-brand-300 text-xs font-semibold mb-4">
