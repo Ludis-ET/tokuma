@@ -19,3 +19,17 @@ pnpm dev
 # Build for production
 pnpm build
 ```
+
+## CI/CD Deployment to cPanel
+
+This repository is equipped with an automated GitHub Actions workflow (`.github/workflows/cpanel-deploy.yml`) that builds and uploads the site directly to cPanel on every push to `main`.
+
+### Required GitHub Secrets:
+Configure these in **GitHub Repository Settings > Secrets and variables > Actions**:
+
+| Secret Name | Description | Example |
+|---|---|---|
+| `FTP_SERVER` | Your cPanel hostname or IP address | `ftp.tokuma.et` or `tokuma.et` |
+| `FTP_USERNAME` | Your cPanel FTP username | `deploy@tokuma.et` or cPanel user |
+| `FTP_PASSWORD` | The FTP account password | `YourFtpPassword!` |
+| `FTP_SERVER_DIR` | Target directory in cPanel | `public_html/` (or subdomain folder) |
