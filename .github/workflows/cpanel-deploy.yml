@@ -75,3 +75,4 @@ jobs:
           echo "=========================================================="
           echo "✅ TOKUMA Landing & Privacy page successfully deployed to cPanel!"
           echo "=========================================================="
+
